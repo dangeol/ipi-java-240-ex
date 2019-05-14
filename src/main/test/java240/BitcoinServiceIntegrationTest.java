@@ -2,6 +2,7 @@ package java240;
 
 import com.ipiecoles.java.java240.BitcoinService;
 import com.ipiecoles.java.java240.Produit;
+import com.ipiecoles.java.java240.SpringConfig;
 import com.ipiecoles.java.java240.WebPageManager;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
@@ -22,7 +23,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import java.io.IOException;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration
+@SpringBootTest(classes = SpringConfig.class)
 public class BitcoinServiceIntegrationTest {
 
     @Autowired
