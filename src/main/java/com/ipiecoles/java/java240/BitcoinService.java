@@ -2,11 +2,13 @@ package com.ipiecoles.java.java240;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 
-@PropertySource("classpath:application.properties")
+@Component
+@Primary
 public class BitcoinService {
 
     private Double rate = null;
@@ -18,6 +20,10 @@ public class BitcoinService {
 
     @Autowired
     private WebPageManager webPageManager;
+
+    public BitcoinService(){
+        System.out.println("Instantiation BitycoinService");
+    }
 
     public void setForceRefresh(Boolean forceRefresh) {
         this.forceRefresh = forceRefresh;
