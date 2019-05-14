@@ -1,5 +1,7 @@
 package com.ipiecoles.java.java240;
 
+import org.springframework.stereotype.Component;
+
 public class Produit {
 
     private String intitule;
