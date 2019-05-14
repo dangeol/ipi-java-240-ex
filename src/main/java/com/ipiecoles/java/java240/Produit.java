@@ -1,12 +1,28 @@
 package com.ipiecoles.java.java240;
 
-import org.springframework.stereotype.Component;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
 public class Produit {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
+    public Long getId() {
+        return id;
+    }
 
     private String intitule;
 
     private Double prixEuro;
+
+    public Produit() {
+
+    }
 
     public Produit(String intitule, Double prixEuro) {
         this.intitule = intitule;

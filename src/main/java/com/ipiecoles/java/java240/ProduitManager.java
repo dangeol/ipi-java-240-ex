@@ -19,6 +19,9 @@ public class ProduitManager {
     private List<Produit> produits = new ArrayList<>();
 
     @Autowired
+    private ProduitRepository produitRepository;
+
+    @Autowired
     private BitcoinService bitcoinService;
 
     @Autowired
@@ -77,6 +80,7 @@ public class ProduitManager {
             produits.add(new Produit(elements[0], Double.parseDouble(elements[1])));
             nbProduits++;
         }
+        produitRepository.saveAll(produits);
         System.out.println("Ajout de " + nbProduits + " produits !");
     }
 
