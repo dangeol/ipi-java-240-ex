@@ -2,6 +2,7 @@ package com.ipiecoles.java.java240;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
@@ -9,6 +10,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 @Component
+@Profile("!test")
 public class Main implements CommandLineRunner {
 
     @Resource(name="bitcoinServiceWithoutCache")
